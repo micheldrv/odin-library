@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <header>
+      <h1>Library</h1>
+    </header>
+    <main></main>
+    <button id="add-book-btn">+</button>
+    <dialog id="add-book-dialog">
+      <div id="dialog-background"></div>
+      <div class="card">
+        <h2>Add book</h2>
+        <form action="#" id="add-book-form">
+          <label>
+            <span>Title</span>
+            <input type="text" id="add-book-title" required />
+          </label>
+          <label>
+            <span>Author</span>
+            <input type="text" id="add-book-author" required />
+          </label>
+          <label>
+            <span>Pages</span>
+            <input type="number" id="add-book-pages" required />
+          </label>
+          <label>
+            <input type="checkbox" id="add-book-read" />
+            <span>Read</span>
+          </label>
+          <button type="submit" id="confirm-btn">Add</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </form>
+      </div>
+    </dialog>
+    <template id="book-template">
+      <div class="card">
+        <h2 class="title">Title</h2>
+        <p class="author">Author</p>
+        <p class="pages-paragraph">
+          Pages:
+          <span class="pages">0</span>
+        </p>
+        <label class="read-label">
+          <input type="checkbox" class="read" />
+          <span>Read</span>
+        </label>
+        <button class="remove-btn">Remove</button>
+      </div>
+    </template>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
