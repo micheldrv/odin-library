@@ -89,6 +89,20 @@ function clearAddBookDialog() {
   document.querySelector("#add-book-read").checked = false;
 }
 
+function addSampleBooks() {
+  if (library.length === 0) {
+    addBookToLibrary("A Game of Thrones", "George R. R. Martin", 835, false);
+    addBookToLibrary(
+      "Harry Potter and the Sorcerer’s Stone",
+      "J. K. Rowling",
+      333,
+      true
+    );
+    addBookToLibrary("The Lord of the Rings", "J. R. R. Tolkien", 1216, false);
+    renderLibrary();
+  }
+}
+
 export function bindButtons() {
   function addEvent(event, query, func, preventDefault = true) {
     document.querySelector(query).addEventListener(event, (ev) => {
@@ -103,5 +117,8 @@ export function bindButtons() {
   addEvent("click", "#cancel-btn", onAddBookCancel);
   addEvent("click", "#dialog-background", onAddBookCancel);
 
-  addEvent("submit", "#add-book-form", onAddBookConfirm, false);
+  addEvent("submit", "#add-book-form", onAddBookConfirm);
+
+  addEvent("click", "#empty-add-book-btn", onAddBook);
+  addEvent("click", "#empty-add-sample-btn", addSampleBooks);
 }

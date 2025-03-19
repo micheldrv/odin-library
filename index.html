@@ -4,13 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Library</title>
+    <title>Odin Library</title>
   </head>
   <body>
     <header>
-      <h1>Library</h1>
+      <h1>Odin Library</h1>
     </header>
-    <main></main>
+    <main>
+      <div class="empty">
+        <p>There are no books currently added.</p>
+        <button id="empty-add-book-btn">Add a book</button>
+        <button id="empty-add-sample-btn">Add sample books</button>
+      </div>
+    </main>
+    <footer>
+      <p>
+        <span>Background illustration from</span>
+        <a
+          href="https://www.freepik.com/free-vector/world-book-day-background_23761052.htm"
+        >
+          Freepik
+        </a>
+      </p>
+    </footer>
     <button id="add-book-btn">+</button>
     <dialog id="add-book-dialog">
       <div id="dialog-background"></div>
@@ -42,15 +58,17 @@
       <div class="card">
         <h2 class="title">Title</h2>
         <p class="author">Author</p>
-        <p class="pages-paragraph">
-          Pages:
-          <span class="pages">0</span>
-        </p>
-        <label class="read-label">
-          <input type="checkbox" class="read" />
-          <span>Read</span>
-        </label>
-        <button class="remove-btn">Remove</button>
+        <div class="tags">
+          <label class="tag read-tag">
+            <input type="checkbox" class="read" />
+            <span>Read</span>
+          </label>
+          <p class="tag pages-tag">
+            <span class="pages">0</span>
+            pages
+          </p>
+          <button class="tag remove-btn">Remove</button>
+        </div>
       </div>
     </template>
     <script src="script.js" type="module"></script>
